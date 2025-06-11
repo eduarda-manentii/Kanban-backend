@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 
 public class Task {
 
-    private Long id;
     private String title;
     private String description;
     private int priority;
@@ -17,22 +16,13 @@ public class Task {
         this.createdAt = LocalDateTime.now();
     }
 
-    public Task(Long id, String title, String description, int priority, String category, LocalDate dueDate) {
-        this.id = id;
+    public Task(String title, String description, int priority, String category, LocalDate dueDate) {
         this.title = title;
         this.description = description;
         this.priority = priority;
         this.category = category;
         this.dueDate = dueDate;
         this.createdAt = LocalDateTime.now();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {

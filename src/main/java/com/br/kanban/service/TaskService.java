@@ -37,6 +37,14 @@ public class TaskService {
         return task;
     }
 
+    public Task moveDoneToDoing() {
+        Task task = done.pop();
+        if(task != null) {
+            doing.enqueue(new TaskNode(task));
+        }
+        return task;
+    }
+
     public List<Task> getBacklogTasks() {
         return backlog.toList();
     }

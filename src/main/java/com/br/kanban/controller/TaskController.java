@@ -20,9 +20,8 @@ public class TaskController {
     private TaskService taskService;
 
     @PostMapping("/backlog")
-    public String addTaskToBacklog(@RequestBody Task task) {
+    public void addTaskToBacklog(@RequestBody Task task) {
         taskService.addTaskToBacklog(task);
-        return "Task added to backlog.";
     }
 
     @PostMapping("/move/backlog-to-doing")
@@ -33,6 +32,10 @@ public class TaskController {
     @PostMapping("/move/doing-to-done")
     public Task moveDoingToDone() {
         return taskService.moveDoingToDone();
+    }
+    @PostMapping("/move/done-to-doing")
+    public Task moveDoneToDoing() {
+        return taskService.moveDoneToDoing();
     }
 
     @GetMapping("/backlog")
